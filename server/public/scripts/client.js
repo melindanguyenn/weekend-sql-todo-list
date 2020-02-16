@@ -4,7 +4,7 @@ function onReady() {
     console.log('JQ');
     $('#addToList').on('click', clickAdd);
     $('#listedTasks').on('click', '.delete', deleteTask);
-    $('#listedTasks').on('click', '.status', taskStatus);
+    $('#listedTasks').on('click', '.btn-primary', taskStatus);
     getTask();
 }
 
@@ -89,7 +89,9 @@ function displayTasks(responseArray) {
         <td>${responseArray[i].date.substring(0,10)}</td>
         <td>${responseArray[i].task}</td>
         <td>${responseArray[i].notes}</td>
-        <td><button class="status">${responseArray[i].status}</button></td>
+        <td><button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+        ${responseArray[i].status}
+      </button></td>
         <td><button class="delete">Delete</button></td>
         </tr>`)
     }

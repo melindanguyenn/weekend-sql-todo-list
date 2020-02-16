@@ -16,18 +16,27 @@ body {
   text-align: center;
 }
 
-section{
-    background-color: seashell;
-    width: 70%;
-    border-radius: .5em;
-    box-shadow: 3px 6px 7px rgb(108, 108, 108);
-    margin-bottom: 5em;
-    padding: 2em;
-    margin: auto;
+header {
+  font-size: 22px;
+  margin: 3%;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+section {
+  background-color: seashell;
+  width: 70%;
+  border-radius: 0.5em;
+  box-shadow: 2px 3px 5px white, 7px 8px 5px grey;
+  margin-bottom: 2em;
+  padding: 2em;
+  margin-left: 13%;
 }
 
 input {
-  box-shadow: 1px 2px 3px rgb(110, 110, 110);
+  box-shadow: 1px 2px 3px white, 2px 3px 5px grey;
   border-radius: 0.5em;
   margin: 5px 5px;
   padding: 0.5em;
@@ -36,17 +45,14 @@ input {
 button {
   background-color: white;
   border-radius: 0.5em;
-  box-shadow: 1px 2px 3px rgb(110, 110, 110);
+  box-shadow: 1px 2px 3px white, 2px 3px 5px grey;
   margin: 5px 5px;
   padding: 0.5em;
 }
 
-th, td {
+th,
+td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid grey;
-}
-
-.complete{
-background-color: mistyrose;
 }
