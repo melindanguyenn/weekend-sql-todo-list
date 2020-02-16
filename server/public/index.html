@@ -6,9 +6,35 @@
     <script type="text/javascript" src="vendors/jquery.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
-      <title>Weekend Challenge 3</title>
+      <title>To-Do List</title>
 </head>
 <body>
-    <h1>Change This</h1>
+    <header>
+        <h1>Welcome to your task list!</h1>
+    </header>
+    <section>
+        <h2>Add a task</h2>
+        <input type="text" id="nameTask" placeholder="Task">
+        <input type="text" id="notes" placeholder="Notes">
+        <button id="addToList">Add Task</button>
+    </section>
+    <section>
+        <h2>Currently, on your to-do list:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Date Added</th>
+                    <th>Task</th>
+                    <th>Notes</th>
+                    <th>Status</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody id="listedTasks">
+                 <!-- jQuery will fill this in -->
+            </tbody>
+        </table>
+    </section>
 </body>
 </html>
