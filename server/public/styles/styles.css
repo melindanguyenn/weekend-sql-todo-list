@@ -6,3 +6,47 @@ page beyond the vanilla HTML look:
   - font family and size
   - text color & or background color of tasks *to show
 whether or not they have been completed* */
+
+body {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRFoNh2vmq0c9EoTFUp6VO7NX_NI38Zy_TSkP-yXw4l1COqHpSG);
+  background-size: auto;
+  background-attachment: scroll;
+  font-family: monospace;
+  font-size: 16px;
+  text-align: center;
+}
+
+section{
+    background-color: seashell;
+    width: 70%;
+    border-radius: .5em;
+    box-shadow: 3px 6px 7px rgb(108, 108, 108);
+    margin-bottom: 5em;
+    padding: 2em;
+    margin: auto;
+}
+
+input {
+  box-shadow: 1px 2px 3px rgb(110, 110, 110);
+  border-radius: 0.5em;
+  margin: 5px 5px;
+  padding: 0.5em;
+}
+
+button {
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 1px 2px 3px rgb(110, 110, 110);
+  margin: 5px 5px;
+  padding: 0.5em;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid grey;
+}
+
+.complete{
+background-color: mistyrose;
+}
