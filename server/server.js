@@ -1,17 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const booksRouter = require('./routes/book.router.js');
+const taskRouter = require('./routes/tasks.router')
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 //add app router
-
-// Serve back static files by default
-app.use(express.static('server/public'))
+app.use('/tasks', taskRouter);
 
 //listening for requests on port
-const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log('listening on port', PORT);
 });
