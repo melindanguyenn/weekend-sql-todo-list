@@ -66,6 +66,7 @@ function displayTasks(responseArray) {
     $('#listedTasks').empty();
     for (let i = 0; i < responseArray.length; i++) {
         $('#listedTasks').append(`<tr data-id="${responseArray[i].id}">
+        <td>${responseArray[i].date.substring(0,10)}</td>
         <td>${responseArray[i].task}</td>
         <td>${responseArray[i].notes}</td>
         <td><select id="taskStatus">

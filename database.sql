@@ -1,6 +1,6 @@
 CREATE TABLE "tasks"(
 	"id" SERIAL PRIMARY KEY,
-	"date" date,
+	"date" date DEFAULT current_date,
 	"task" VARCHAR (250) NOT NULL,
 	"notes" VARCHAR (500),
     "status" VARCHAR (80) DEFAULT 'INCOMPLETE'
