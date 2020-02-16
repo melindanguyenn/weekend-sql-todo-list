@@ -1,15 +1,15 @@
 CREATE TABLE "tasks"(
 	"id" SERIAL PRIMARY KEY,
+	"date" date,
 	"task" VARCHAR (250) NOT NULL,
 	"notes" VARCHAR (500),
-    "status" VARCHAR (80) DEFAULT 'Uncomplete',
-    "date" date
+    "status" VARCHAR (80) DEFAULT 'INCOMPLETE'
 );
 
 
-INSERT INTO "tasks"("date", "task", "notes", "status") VALUES('06/06/2002', 'Schedule doctors appointment', 'Papercut', 'UNCOMPLETE');
-INSERT INTO "tasks"("date", "task", "notes", "status") VALUES('06/06/2002', 'Cancel cater', 'Cancel by Moday!!! Caterer: Mels Cafe', 'UNCOMPLETE');
-INSERT INTO "tasks"("date", "task", "notes", "status") VALUES('06/06/2002', 'Clean room', 'Laundry and vacuum', 'UNCOMPLETE');
-INSERT INTO "tasks"("date", "task", "notes", "status") VALUES('06/06/2002', 'Dinner date', 'Dinner at 6PM Monday with friends, BRING WINE', 'UNCOMPLETE');
-INSERT INTO "tasks"("date", "task", "notes", "status") VALUES('06/06/2002', 'Pick up family', 'Landing at MSP Wednesday at 8PM', 'UNCOMPLETE');
-INSERT INTO "tasks"("date", "task", "notes", "status") VALUES('06/06/2002', 'Buy groceries', 'Apples, bananas, oranges, lettuce, tomato, eggs, ham', 'UNCOMPLETE');
+INSERT INTO "tasks"("date", "task", "notes") VALUES(current_date, 'Schedule doctors appointment', 'Papercut');
+INSERT INTO "tasks"("date", "task", "notes") VALUES(current_date, 'Cancel cater', 'Cancel by Moday!!! Caterer: McDonalds');
+INSERT INTO "tasks"("date", "task", "notes") VALUES(current_date, 'Clean room', 'Laundry and vacuum');
+INSERT INTO "tasks"("date", "task", "notes") VALUES(current_date, 'Dinner date', 'Dinner at 6PM Monday with friends, BRING WINE');
+INSERT INTO "tasks"("date", "task", "notes") VALUES(current_date, 'Pick up family', 'Landing at MSP Wednesday at 8PM');
+INSERT INTO "tasks"("date", "task", "notes") VALUES(current_date, 'Buy groceries', 'Apples, bananas, oranges, lettuce, tomato, eggs, ham');
