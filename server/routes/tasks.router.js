@@ -6,6 +6,7 @@ const router = express.Router();
 
 const pool = require('../modules/pool');
 
+//GET
 router.get('/', (req, res) => {
     let queryText = 'SELECT * FROM "tasks";';
     pool.query(queryText).then(result => {
@@ -16,6 +17,22 @@ router.get('/', (req, res) => {
       console.log('error getting books', error);
       res.sendStatus(500);
     });
-  });
+});
+
+//POST
+router.post('/',  (req, res) => {
+  let newTask = req.body;
+  console.log(newTask);
+  let queryText = `INSERT INTO "tasks" ("task", "notes") VALUES ($1, $2);`;
+  pool.query(queryText, [newTask.task, newTask.notes]).then((result) => {
+      console.log('task added to list');
+      res.sendStatus(201);
+    }).catch((error) => {
+      console.log(`Cannot add to list`, error);
+      res.sendStatus(500);
+    });
+});
+
+
 
 module.exports = router;

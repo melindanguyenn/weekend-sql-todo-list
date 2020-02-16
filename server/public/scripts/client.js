@@ -2,8 +2,34 @@ $(document).ready(onReady);
 
 function onReady() {
     console.log('JQ');
+    $('#addToList').on('click', clickAdd);
     getTask();
 }
+
+function clickAdd() {
+    console.log('Add button clicked.');
+    let task = {
+        task: $('#nameTask').val(),
+        notes: $('#notes').val()
+    };
+    console.log(task);
+    addtask(task);
+  }
+  
+  // adds a book to the database
+  function addtask(task) {
+    $.ajax({
+      type: 'POST',
+      url: '/tasks',
+      data: task
+      }).then(function(response){
+        console.log('Response from server.', response);
+        getTask();
+      }).catch(function(error) {
+        console.log('Error in POST', error)
+        alert('Unable to add');
+      });
+  }
 
 function getTask() {
     //GET request
