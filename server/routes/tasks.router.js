@@ -28,9 +28,23 @@ router.post('/',  (req, res) => {
       console.log('task added to list');
       res.sendStatus(201);
     }).catch((error) => {
-      console.log(`Cannot add to list`, error);
+      console.log(`in post`, error);
       res.sendStatus(500);
     });
+});
+
+//PUT
+router.put('/:id', (req, res) => {
+  let tasks = req.body; // what to update
+  let id = req.params.id; // id to update
+  console.log(`update task ${id} to`, tasks.status);
+  let queryString = `UPDATE "tasks" SET "status" = ($1) WHERE "id" = ($2)`
+  pool.query(queryString, [tasks.status, req.params.id]).then((results) => {
+      res.sendStatus(201);
+  }).catch((error) => {
+    console.log('in put',error);
+    res.sendStatus(500);
+  });
 });
 
 
@@ -38,12 +52,12 @@ router.post('/',  (req, res) => {
 router.delete('/:id',  (req, res) => {
   let id = req.params.id;
   console.log('deleting this', id);
-  let queryString = `DELETE FROM tasks WHERE "id" = ($1)`;
+  let queryString = `DELETE FROM "tasks" WHERE "id" = ($1)`;
   pool.query(queryString, [req.params.id]).then((results) => {
       console.log('task deleted');
       res.sendStatus(200);
   }).catch((err) => {
-      console.log(err);
+      console.log('in delete',error);
       res.sendStatus(500);
   })
 });
