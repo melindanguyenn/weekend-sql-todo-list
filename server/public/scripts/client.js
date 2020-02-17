@@ -46,6 +46,7 @@ function addtask(task) {
       data: task
       }).then(function(response){
         console.log('back from POST', response);
+        $('#listedTasks').empty();
         getTask();
       }).catch(function(error) {
         console.log('error in POST', error)
@@ -61,6 +62,7 @@ function deleteTask() {
         url: `/tasks/${selectedId}`
     }).then(function (response) {
         console.log('back from DELETE with', response);
+        $('#listedTasks').empty();
         getTask();
     }).catch(function (err) {
         console.log(err);
