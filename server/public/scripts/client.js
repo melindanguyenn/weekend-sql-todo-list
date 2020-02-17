@@ -4,7 +4,7 @@ function onReady() {
     console.log('JQ');
     $('#addToList').on('click', clickAdd);
     $('#listedTasks').on('click', '.delete', deleteTask);
-    $('#listedTasks').on('click', '.btn-primary', taskStatus);
+    $('#listedTasks').on('click', '.btn', taskStatus);
     getTask();
 }
 
@@ -38,7 +38,8 @@ function clickAdd() {
 } //passes user input to add
   
   // adds a book to the database
-  function addtask(task) {
+function addtask(task) {
+      event.preventDefault()
     $.ajax({
       type: 'POST',
       url: '/tasks',
@@ -85,11 +86,14 @@ function getTask() {
 function displayTasks(responseArray) {
     $('#listedTasks').empty();
     for (let i = 0; i < responseArray.length; i++) {
+        let cssComplete = responseArray[i].status === 'COMPLETE'
+            ? 'complete'
+            : 'btn';
         $('#listedTasks').append(`<tr data-id="${responseArray[i].id}">
         <td>${responseArray[i].date.substring(0,10)}</td>
         <td>${responseArray[i].task}</td>
         <td>${responseArray[i].notes}</td>
-        <td><button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+        <td><button type="button" class="${cssComplete}" data-toggle="button" aria-pressed="false" autocomplete="off">
         ${responseArray[i].status}
       </button></td>
         <td><button class="delete">Delete</button></td>
