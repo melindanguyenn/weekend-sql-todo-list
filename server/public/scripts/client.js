@@ -47,7 +47,11 @@ function addtask(task) {
       }).then(function(response){
         console.log('back from POST', response);
         $('#listedTasks').empty();
-        getTask();
+          getTask();
+          task = {
+            task: $('#nameTask').val(''),
+            notes: $('#notes').val('')
+        };
       }).catch(function(error) {
         console.log('error in POST', error)
         alert('cannot to add');
