@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
       res.send(result.rows);
     })
     .catch(error => {
-      console.log('error getting books', error);
+      console.log('error getting task', error);
       res.sendStatus(500);
     });
 });
